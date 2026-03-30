@@ -3,7 +3,8 @@ import App from "../App";
 import { getInvoices as overviewLoader, getInvoiceById as editLoader } from "../services/invoiceService";
 import InvoiceOverviewPage from "../pages/InvoiceOverviewPage/InvoiceOverviewPage";
 import InvoiceCreatePage from "../pages/InvoiceCreatePage";
-import InvoiceEditPage from "../pages/InvoiceEditPage";
+import InvoiceEditPage from "../pages/InvoiceEditPage/InvoiceEditPage";
+import InvoiceDetailPage from "../pages/InvoiceDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ export const router = createBrowserRouter([
       {
         path: "invoice/:id/edit",
         element: <InvoiceEditPage />,
+        loader: editLoader
+      },
+      {
+        path: "invoice/:id",
+        element: <InvoiceDetailPage />,
         loader: editLoader
       }
     ]

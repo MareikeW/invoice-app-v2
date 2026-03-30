@@ -1,7 +1,7 @@
-import invoicesData from "../data/data.json";  // Der Import der JSON-Datei
+import invoicesData from "../data/data.json";
 
 export const getInvoices = async () => {
-  return invoicesData; // Direkt die Rechnungen zurückgeben
+  return invoicesData;
 };
 
 export const getInvoiceById = async ({ params }) => {

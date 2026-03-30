@@ -5,7 +5,7 @@ const InvoiceEditPage = () => {
 
   return (
     <div>
-      <h1>Rechnung bearbeiten</h1>
+      <h1>Rechnung ansehen</h1>
 
       <Link to="/">
         <button>Zurück zur Übersicht</button>

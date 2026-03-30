@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router";
+import InvoiceCard from "../../components/InvoiceCard/InvoiceCard";
 
 const InvoiceOverviewPage = () => {
   const invoices = useLoaderData();
@@ -16,11 +17,14 @@ const InvoiceOverviewPage = () => {
 
       <ul>
         {invoices.map(invoice => (
-          <li key={invoice.id}>
-            <Link to={`/invoice/${invoice.id}/edit`}>
-                <button>${invoice.id}</button>
-            </Link>
-        </li>
+          <InvoiceCard
+            key={invoice.id}
+            id={invoice.id}
+            clientName={invoice.clientName}
+            paymentDue={invoice.paymentDue}
+            total={invoice.total}
+            status={invoice.status}
+          />
         ))}
       </ul>
     </div>
