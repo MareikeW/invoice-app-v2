@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
-import { getInvoices as overviewLoader, getInvoiceById as editLoader } from "../services/invoiceService";
+import { getInvoices as overviewLoader, getInvoiceById as detailEditLoader } from "../services/invoiceService";
 import InvoiceOverviewPage from "../pages/InvoiceOverviewPage/InvoiceOverviewPage";
-import InvoiceCreatePage from "../pages/InvoiceCreatePage";
+import InvoiceCreatePage from "../pages/InvoiceCreatePage/InvoiceCreatePage";
 import InvoiceEditPage from "../pages/InvoiceEditPage/InvoiceEditPage";
-import InvoiceDetailPage from "../pages/InvoiceDetailPage";
+import InvoiceDetailPage from "../pages/InvoiceDetailPage/InvoiceDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -23,12 +23,12 @@ export const router = createBrowserRouter([
       {
         path: "invoice/:id/edit",
         element: <InvoiceEditPage />,
-        loader: editLoader
+        loader: detailEditLoader
       },
       {
         path: "invoice/:id",
         element: <InvoiceDetailPage />,
-        loader: editLoader
+        loader: detailEditLoader
       }
     ]
   }

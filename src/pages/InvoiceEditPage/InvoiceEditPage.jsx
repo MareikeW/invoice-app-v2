@@ -1,15 +1,14 @@
-import { Link, useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
+import GoBackButton from "../../components/UI/GoBackButton/GoBackButton";
 
 const InvoiceEditPage = () => {
-    const invoice = useLoaderData();
+  const invoice = useLoaderData();
 
   return (
     <div>
-      <h1>Rechnung ansehen</h1>
+      <h1>Rechnung bearbeiten</h1>
 
-      <Link to="/">
-        <button>Zurück zur Übersicht</button>
-      </Link>
+      <GoBackButton id={invoice.id} />
 
       <p>{invoice.id}</p>
     </div>

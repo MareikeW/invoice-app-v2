@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router";
-import { toReformattedDate, toCurrencyFormat } from "../utils/utils";
-import InvoiceItem from "../components/InvoiceItem/InvoiceItem";
+import { toReformattedDate, toCurrencyFormat } from "../../utils/utils";
+import InvoiceItem from "../../components/InvoiceItem/InvoiceItem";
+import GoBackButton from "../../components/UI/GoBackButton/GoBackButton";
 
 const InvoiceDetailPage = () => {
     const invoice = useLoaderData();
@@ -9,9 +10,7 @@ const InvoiceDetailPage = () => {
         <div>
         <h1>Rechnung ansehen</h1>
 
-        <Link to="/">
-            <button>Go back</button>
-        </Link>
+        <GoBackButton id="" />
 
         <section>
             <p>Status</p>
@@ -42,6 +41,7 @@ const InvoiceDetailPage = () => {
             <div>
                 {invoice.items.map(item => (
                 <InvoiceItem
+                    key={item.name}
                     name={item.name}
                     quantity={item.quantity}
                     price={item.price}
@@ -57,7 +57,9 @@ const InvoiceDetailPage = () => {
         </section>
 
         <section>
-            <button>Edit</button>
+            <Link to={`/invoice/${invoice.id}/edit`}>
+                <button>Edit</button>
+            </Link>
             <button>Delete</button>
             <button>Mark as Paid</button>
         </section>

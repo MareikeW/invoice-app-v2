@@ -4,13 +4,13 @@ import InvoiceCard from "../../components/InvoiceCard/InvoiceCard";
 const InvoiceOverviewPage = () => {
   const invoices = useLoaderData();
 
-  if (!invoices) return <p>Keine Rechnungen gefunden.</p>;
+  if (!invoices) return <p>There is nothing here</p>;
   return (
     <div>
-      <h1>Rechnungsübersicht</h1>
+      <h1>Invoices</h1>
 
       <Link to="/new">
-        <button>Neue Rechnung</button>
+        <button>New</button>
       </Link>
 
       

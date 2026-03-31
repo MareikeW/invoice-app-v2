@@ -11,6 +11,8 @@ html {
     font-family: "Spartan", sans-serif;
     font-style: normal;
     background-color: #F8F8FB;
+    max-width: 375px;
+    margin: 0 auto;
 }
 
 ul {
