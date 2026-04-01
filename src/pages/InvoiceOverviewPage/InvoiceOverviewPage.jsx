@@ -1,9 +1,12 @@
-import { Link, useLoaderData } from "react-router";
+import { Link } from "react-router";
+import { useContext } from "react";
+import { DataContext } from "../../context/DataContext";
 import InvoiceCard from "../../components/InvoiceCard/InvoiceCard";
 
 const InvoiceOverviewPage = () => {
-  const invoices = useLoaderData();
-
+  // const invoices = useLoaderData();
+  const context = useContext(DataContext);
+  const invoices = context.invoices;
   if (!invoices) return <p>There is nothing here</p>;
   return (
     <div>

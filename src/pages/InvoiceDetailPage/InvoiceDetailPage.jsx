@@ -1,10 +1,16 @@
-import { Link, useLoaderData } from "react-router";
+import { Link} from "react-router";
+import { useParams } from "react-router-dom";
 import { toReformattedDate, toCurrencyFormat } from "../../utils/utils";
 import InvoiceItem from "../../components/InvoiceItem/InvoiceItem";
 import GoBackButton from "../../components/UI/GoBackButton/GoBackButton";
+import { useContext } from "react";
+import { DataContext } from "../../context/DataContext";
 
 const InvoiceDetailPage = () => {
-    const invoice = useLoaderData();
+    const { id } = useParams();
+    const { invoices } = useContext(DataContext);
+
+    const invoice = invoices.find(inv => inv.id === id);
 
     return (
         <div>

@@ -9,7 +9,7 @@ export default function InvoiceCreatePage() {
 
             <h1>New Invoice</h1>
 
-            <InvoiceForm />
+            <InvoiceForm invoice={null}/>
         </div>
     )
 }

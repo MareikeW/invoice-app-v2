@@ -1,4 +1,5 @@
 import { Outlet } from "react-router";
+import { DataProvider } from "./context/DataProvider.jsx";
 import "./App.css";
 
 export default function App() {
@@ -7,10 +8,11 @@ export default function App() {
       <aside>
         <h2>Seitennavigation</h2>
       </aside>
-
-      <main>
-        <Outlet />
-      </main>
+      <DataProvider>
+        <main>
+          <Outlet />
+        </main>
+      </DataProvider>
     </div>
   );
 }

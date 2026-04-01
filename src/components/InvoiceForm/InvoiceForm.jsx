@@ -1,13 +1,15 @@
 // import styles from "./InvoiceForm.module.css";
+import InvoiceListItem from "../InvoiceListItem/InvoiceListItem";
 
-const InvoiceForm = () => {
+const InvoiceForm = ( {invoice} ) => {
+    // TODO: Leeres Objekt für neue Rechnung erstellen
 
     return (
         <form>
             <div>Bill From</div>
 
             <label for="street">Street Address</label>
-            <input type="text" id="street"></input>
+            <input type="text" id="street" value={invoice.senderAddress.street}></input>
             <br />
             <label for="city">City</label>
             <input type="text" id="city"></input>
@@ -52,7 +54,7 @@ const InvoiceForm = () => {
             <input type="text" id="project-description"></input>
 
             <div>Item List</div>
-
+            <InvoiceListItem />
 
             <button>Add New Item</button>
         </form>

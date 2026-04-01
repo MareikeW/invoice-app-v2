@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
-import { getInvoices as overviewLoader, getInvoiceById as detailEditLoader } from "../services/invoiceService";
 import InvoiceOverviewPage from "../pages/InvoiceOverviewPage/InvoiceOverviewPage";
 import InvoiceCreatePage from "../pages/InvoiceCreatePage/InvoiceCreatePage";
 import InvoiceEditPage from "../pages/InvoiceEditPage/InvoiceEditPage";
@@ -13,8 +12,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <InvoiceOverviewPage />,
-        loader: overviewLoader
+        element: <InvoiceOverviewPage />
       },
       {
         path: "new",
@@ -22,13 +20,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "invoice/:id/edit",
-        element: <InvoiceEditPage />,
-        loader: detailEditLoader
+        element: <InvoiceEditPage />
       },
       {
         path: "invoice/:id",
-        element: <InvoiceDetailPage />,
-        loader: detailEditLoader
+        element: <InvoiceDetailPage />
       }
     ]
   }
